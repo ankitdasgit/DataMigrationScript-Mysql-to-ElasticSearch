@@ -26,8 +26,8 @@ Before running the script, ensure you have the following installed:
 2. use username and password of elasticSearch, and
 
 2. Create an index pattern in Kibana:
-> Go to Management -> Index Patterns.
-> Enter the name of your Elasticsearch index (specified in the Python script).
+- Go to Management -> Index Patterns.
+- Enter the name of your Elasticsearch index (specified in the Python script).
 
 
 ## references
