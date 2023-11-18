@@ -1,8 +1,7 @@
-This Python script for how to migrate data from a MySQL database table to Elasticsearch and visualize it using Kibana.
+This Python script for how to migrate data from a MySQL database to Elasticsearch and visualize it using Kibana.
 
 ## Prerequisites
-1. install elasticsearch and kibana and configure in your machine
-
+1. install elasticsearch and kibana and configure in your machine(save your elasticsearch username and password)
 
 Before running the script, ensure you have the following installed:
 
@@ -10,12 +9,10 @@ Before running the script, ensure you have the following installed:
 - mysql-connector-python library (`pip install mysql-connector-python`)
 
 
-
-
 ## how to run script 
 1. Install Required Librarie
-2. Set Up MySQL and Elasticsearch Configurations
-3. Ensure MySQL and Elasticsearch are Running
+2. Set Up kibana and Elasticsearch Configurations
+3. Ensure Elasticsearch is Running
 4. run using "python MysqltoES.py" command
 
 
@@ -27,9 +24,7 @@ Before running the script, ensure you have the following installed:
 
 2. Create an index pattern in Kibana:
 - Go to Management -> Index Patterns.
-- Enter the name of your Elasticsearch index (specified in the Python script).
-
-3. Go to Discover and select the newly created index pattern to explore your data.
+- Enter the name of your Elasticsearch index (specified in the script).
 
 
 ## references

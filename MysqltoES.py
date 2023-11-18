@@ -1,36 +1,36 @@
 from elasticsearch import Elasticsearch
 import mysql.connector
 
-# attach your MySQL Configurations
-MYSQL_HOST = 'localhost'
-MYSQL_USER = ''
-MYSQL_PASSWORD = ''
-MYSQL_DB = ''
-MYSQL_TABLE = ''
+# attach your MySQL Configuratiions here
+Mysql_Host = ''
+Mysql_User = ''
+Mysql_Password = ''
+Mysql_DB = ''
+Mysql_Table = ''
 
-# Elasticsearch Configurations
-ES_HOST = 'localhost:9200'
-ES_INDEX = ''
+# elasticsearch Configurations
+ES_HOST = 'https://localhost:9200'
+ES_INDEX= ''
 
 # Connect to MySQL
 try:
     mysql_conn = mysql.connector.connect(
-        host=MYSQL_HOST,
-        user=MYSQL_USER,
-        passwd=MYSQL_PASSWORD,
-        database=MYSQL_DB
+        host=Mysql_Host,
+        user=Mysql_User,
+        passwd=Mysql_Password,
+        database=Mysql_DB
     )
     cursor = mysql_conn.cursor(dictionary=True)
-    cursor.execute(f"SELECT * FROM {MYSQL_TABLE}") 
+    cursor.execute(f"SELECT * FROM {Mysql_Table}") 
 
 # Connect to Elasticsearch
     es = Elasticsearch([ES_HOST])
 
-# Migrate data from MySQL to Elasticsearch
+# Migrate data from MySql to elasticsearch
     for row in cursor:
         es.index(index=ES_INDEX, body=row)
 
-    print("Data migration from MySQL to Elasticsearch completed.")
+    print("Data migration completed.")
 
 except mysql.connector.Error as err:
     print(f"Error connecting to MySQL: {err}")
