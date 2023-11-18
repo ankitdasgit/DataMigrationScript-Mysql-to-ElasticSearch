@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 This Python script for how to migrate data from a MySQL database to Elasticsearch and visualize it using Kibana.
-=======
-This python script for how to migrate data from a MySQL database table to Elasticsearch and visualize it using kibana.
->>>>>>> 7b495fb87d83483a16b7d55df1dfb849a33ee825
+
 
 ## Prerequisites
 1. install elasticsearch and kibana and configure in your machine(save your elasticsearch username and password)
@@ -28,12 +25,8 @@ Before running the script, ensure you have the following installed:
 
 2. Create an index pattern in Kibana:
 - Go to Management -> Index Patterns.
-<<<<<<< HEAD
 - Enter the name of your Elasticsearch index (specified in the script).
-=======
-- Enter the name of your Elasticsearch index (specified in the Python script).
->>>>>>> 7b495fb87d83483a16b7d55df1dfb849a33ee825
-
+  
 
 ## references
 1. https://episyche.com/blog/how-to-configure-elasticsearch-and-kibana-setup
