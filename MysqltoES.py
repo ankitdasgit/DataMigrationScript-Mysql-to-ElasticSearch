@@ -11,6 +11,8 @@ Mysql_Table = ''
 # elasticsearch Configurations
 ES_HOST = 'https://localhost:9200'
 ES_INDEX= ''
+ES_USERNAME=''
+ES_PASSWORD=""
 
 # Connect to MySQL
 try:
@@ -24,12 +26,14 @@ try:
     cursor.execute(f"SELECT * FROM {Mysql_Table}") 
 
 # Connect to Elasticsearch
-    es = Elasticsearch([ES_HOST])
+    es=Elasticsearch(['https://localhost:9200'],
+                 verify_certs=False,
+                 basic_auth=(ES_USERNAME,ES_PASSWORD)
+                 )
 
 # Migrate data from MySql to elasticsearch
     for row in cursor:
         es.index(index=ES_INDEX, body=row)
-
     print("Data migration completed.")
 
 except mysql.connector.Error as err:
