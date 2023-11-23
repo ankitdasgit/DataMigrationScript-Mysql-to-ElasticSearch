@@ -31,7 +31,7 @@ try:
     cursor.execute(f"SELECT * FROM {Mysql_Table}") 
 
 # Connect to Elasticsearch
-    es=Elasticsearch(['https://localhost:9200'],
+    es=Elasticsearch([ES_HOST],
                  verify_certs=False,
                  basic_auth=(ELASTIC_USERNAME,ELASTIC_PASSWORD)
                  )
