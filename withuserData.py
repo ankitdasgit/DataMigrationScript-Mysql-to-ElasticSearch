@@ -1,20 +1,22 @@
 from elasticsearch import Elasticsearch
 import mysql.connector
 
-ELASTIC_PASSWORD = ""
-ELASTIC_USERNAME=""
+ELASTIC_PASSWORD = "UH4G4=S1oxr=26CyrQk_"
+ELASTIC_USERNAME="elastic"
+
+# client.indices.create(index="employee_index")
 
 
 # attach your MySQL Configuratiions here
-Mysql_Host = ''
-Mysql_User = ''
-Mysql_Password = ''
-Mysql_DB = ''
-Mysql_Table = ''
+Mysql_Host = 'localhost'
+Mysql_User = 'root'
+Mysql_Password = 'ankit1234'
+Mysql_DB = 'dmsdemo'
+Mysql_Table = 'employee'
 
 # elasticsearch Configurations
-ES_HOST = ''
-ES_INDEX= ''
+ES_HOST = 'https://localhost:9200'
+ES_INDEX= 'employee_index'
 
 
 # Connect to MySQL
@@ -29,7 +31,7 @@ try:
     cursor.execute(f"SELECT * FROM {Mysql_Table}") 
 
 # Connect to Elasticsearch
-    es=Elasticsearch([],
+    es=Elasticsearch(['https://localhost:9200'],
                  verify_certs=False,
                  basic_auth=(ELASTIC_USERNAME,ELASTIC_PASSWORD)
                  )
