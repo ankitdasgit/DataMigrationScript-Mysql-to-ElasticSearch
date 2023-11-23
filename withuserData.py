@@ -1,22 +1,23 @@
 from elasticsearch import Elasticsearch
 import mysql.connector
 
-ELASTIC_PASSWORD = "UH4G4=S1oxr=26CyrQk_"
-ELASTIC_USERNAME="elastic"
+ELASTIC_PASSWORD = "ElasticSearch password"
+ELASTIC_USERNAME="elasticSearch username"
 
-# client.indices.create(index="employee_index")
+#indices create by using this command
+# client.indices.create(index="employee_index")  
 
 
 # attach your MySQL Configuratiions here
-Mysql_Host = 'localhost'
-Mysql_User = 'root'
-Mysql_Password = 'ankit1234'
-Mysql_DB = 'dmsdemo'
-Mysql_Table = 'employee'
+Mysql_Host = 'your database host name'
+Mysql_User = 'Database user name'
+Mysql_Password = 'Database password'
+Mysql_DB = 'Database Name'
+Mysql_Table = 'mysql Table name'
 
 # elasticsearch Configurations
-ES_HOST = 'https://localhost:9200'
-ES_INDEX= 'employee_index'
+ES_HOST = 'ElasticSearch Host Name'
+ES_INDEX= 'Elastic search index name'
 
 
 # Connect to MySQL
