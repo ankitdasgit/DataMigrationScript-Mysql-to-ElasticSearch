@@ -2,17 +2,17 @@ from elasticsearch import Elasticsearch
 import mysql.connector
 
 # attach your MySQL Configuratiions here
-Mysql_Host = 'localhost'
-Mysql_User = 'root'
-Mysql_Password = 'ankit1234'
-Mysql_DB = 'dmsdemo'
-# Mysql_Table = 'mysql Table name'
+Mysql_Host = ''
+Mysql_User = ''
+Mysql_Password = ''
+Mysql_DB = ''
+
 
 # Elasticsearch Configurations
-ES_HOST = 'https://localhost:9200'
-ES_INDEX_PREFIX = 'dms_index'  
-ELASTIC_PASSWORD = "UH4G4=S1oxr=26CyrQk_"
-ELASTIC_USERNAME="elastic"
+ES_HOST = ""
+ES_INDEX_PREFIX = " "  
+ELASTIC_PASSWORD = " "
+ELASTIC_USERNAME=""
 
 try:
     # Connect to MySQL
@@ -26,13 +26,10 @@ try:
 
     # Connect to Elasticsearch
     es=Elasticsearch([ES_HOST],
-                 verify_certs=False,
+                 verify_certs=True,
                  basic_auth=(ELASTIC_USERNAME,ELASTIC_PASSWORD)
                  )
-    
-    # es.indices.create(index="dms_index")
-    ES_INDEX_PREFIX= 'dms_index'  
-    
+
     # Fetch list of tables in the database
     mysql_cursor.execute("SHOW TABLES")
     tables = mysql_cursor.fetchall()
@@ -56,9 +53,8 @@ try:
             # Prepare data to be indexed as a dictionary
             document = {
                 'table': table_name,
-                'data': str(row)  # Assuming `row` is a tuple or a list
+                'data': str(row) 
             }
-
             # Index the document
             es.index(index=es_index_name, body=document)
             print(f"Data indexed in {es_index_name}: {document}")   
