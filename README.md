@@ -14,7 +14,7 @@ Before running the script, ensure you have the following installed:
 1. Install Required Librarie
 2. Set Up kibana and Elasticsearch Configurations
 3. Ensure Elasticsearch is Running
-4. run using "python MysqltoES.py" command
+4. run using "python wholeDatabaseMigration.py" command
 
 
 ## Visualizing Data in Kibana
@@ -33,5 +33,5 @@ Before running the script, ensure you have the following installed:
 
 
 ## references
-1. https://episyche.com/blog/how-to-configure-elasticsearch-and-kibana-setup
+1. https://episyche.com/blog/how-to-configure-elasticsearch-and-kibana-setup (setup in ec2 instance)
 
